@@ -1,0 +1,4 @@
+npm init -y
+npm install --save express
+npm install -g sequelize-cli
+npm install sequelize pg --save
