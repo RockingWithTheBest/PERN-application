@@ -1,0 +1,10 @@
+npm init -y
+npm install --save express
+npm install -g sequelize-cli
+addition of pg: npm install sequelize pg --save
+installization of sequelize : npx sequelize-cli init
+create migration : npx sequelize-cli migration:generate --name init
+create model : npx sequelize-cli model:generate --name Client --attributes full_name:string,passport_number:string
+sending-migration : npx sequelize-cli db:migrate
+axios : npm install axios --save
+nodemon: npm i nodemon
