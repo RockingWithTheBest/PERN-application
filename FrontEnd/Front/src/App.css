@@ -3,8 +3,13 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  color: black;
+  background: linear-gradient(135deg, #00aaff, #0047ab);
 }
 
+body{
+  background: linear-gradient(135deg, #00aaff, #0047ab);
+}
 .logo {
   height: 6em;
   padding: 1.5em;

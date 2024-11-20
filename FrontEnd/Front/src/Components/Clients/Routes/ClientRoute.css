@@ -1,0 +1,68 @@
+.popup{
+    background-color: #fff;
+    color: black;
+}
+
+.pop-up {
+    background-color: white;
+    width: 100px;
+    height: 200px;
+    color: black;
+}
+
+.display {
+    background-color: #1565c0;
+    color: black;
+    width: 307px;
+    height: 227px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+}
+
+.update {
+    background-color: #1565c0;
+    color: black;
+    width: 747px;
+    align-content: center;
+    height: 200px;
+    border-radius: 13px;
+}   
+
+.filter {
+    margin-bottom: 100px;
+    background-color: aliceblue;
+    height: 320px;
+    border-radius: 5px;
+}
+input.fullname , input.passport{
+    width: 200px;
+    height: 29px;
+    border-radius: 5px;
+    margin-bottom: 6px;
+}
+
+.client {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form.form-submit {
+    background: aliceblue;
+    width: 700px;
+    height: 202px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+button.btn-submit {
+    width: 170px;
+    margin-top: 12px;
+}
+

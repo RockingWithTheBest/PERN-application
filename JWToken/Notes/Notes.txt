@@ -1,0 +1,8 @@
+npm i express jsonwebtoken dotenv
+npm i --save-dev nodemon
+install extension rest client
+
+//formation of token enter this in the terminal
+node
+//and then enter this
+require('crypto').randomBytes(64).toString('hex')

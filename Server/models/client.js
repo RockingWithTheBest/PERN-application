@@ -24,8 +24,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     } ,
     passport_number:{
-      type: DataTypes.STRING,
-      allowNull: true,
+      type: DataTypes.STRING(8),
+      allowNull: false,
     } 
   }, {
     sequelize,

@@ -8,3 +8,9 @@ create model : npx sequelize-cli model:generate --name Client --attributes full_
 sending-migration : npx sequelize-cli db:migrate
 axios : npm install axios --save
 nodemon: npm i nodemon
+npm i axios
+npm install cors
+
+
+ // "test": "echo \"Error: no test specified\" && exit 1",
+
