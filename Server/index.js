@@ -34,15 +34,7 @@ app.use(bodyParser.json());
 
 app.use(cors()); // This will allow all origins// Use CORS middleware
 
-app.get('/allclients', async (req,res)=>{
-    try{
-        const results = await dbConnect.query("SELECT * FROM \"Clients\"");
-        res.json(results.rows); 
-    }
-    catch(e){
-        console.log("There was an error ", e);
-    }
-})
+
 
 app.post('/get', async (req,res)=>{
     try{
@@ -55,6 +47,7 @@ app.post('/get', async (req,res)=>{
         res.json({ status: "success" });
     }
     catch(e){
+        res.json({ e });
         console.log("There was an error ", e);
     }
 })
@@ -235,6 +228,7 @@ app.post('/cashier', async (req,res)=>{
         res.json({ status: "success" });
     }
     catch(e){
+        res.json({ status: "There was an error" });
         console.log("There was an error ", e);
     }
 });
