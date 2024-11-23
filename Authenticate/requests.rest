@@ -1,0 +1,22 @@
+GET  http://localhost:1113/identity
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmdWxsX25hbWUiOiJFbW1hbmV1bCAyMjIiLCJwYXNzcG9ydF9udW1iZXIiOiJQTjIyMjIyMiIsImlhdCI6MTczMjI4MjcyNiwiZXhwIjoxNzMyMjgyNzQ2fQ.aIqZw0_7-2kFAgLOonfGRUh3MDdDYBDSeiO5ey6iTjk
+
+###
+
+POST /login HTTP/1.1
+HOST:localhost:2111
+Content-Type: application/json
+
+{
+  "passport_number":  "PN222222"
+}
+
+###
+POST /register HTTP/1.1
+Host: localhost:2111
+Content-Type: application/json
+
+{
+  "full_name":"Emmaneul 222",
+  "passport_number": "PN222222"
+}

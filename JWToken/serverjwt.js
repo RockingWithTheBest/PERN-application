@@ -32,7 +32,7 @@ function authenticationToken(req, res, next) {
             jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
                 if (err) return res.sendStatus(403);//you have a token but its not accessible
                 req.user = user;
-                next();
+                next();//move on from middleware
             });
         }
        
