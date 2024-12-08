@@ -23,25 +23,25 @@ async function Connect(){
     }
   }
 Connect();
-
+let refreshTokens =[];
 const dataFromDb =[];
 
 async function getData (){
-    const results = await dbConnect.query('SELECT * FROM \"Clients\"');
+    const results = await dbConnect.query('SELECT * FROM \"Cashiers\"');
     dataFromDb.push(...results.rows);
     console.log("Data successfully gotten from database");
 }
 getData();
 
-const PORT = 1113;
+const PORT = 2223;
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
 app.get('/identity', authenticationToken, async(req, res) => {
-    const results = await dbConnect.query('SELECT * FROM \"Clients\"');
-    res.send(results.rows.filter(row=>row.passport_number === req.client.passport_number));
+    const results = await dbConnect.query('SELECT * FROM \"Cashiers\"');
+    res.send(results.rows.filter(row=>row.password === req.client.password));
 });
 
 function authenticationToken (req, res, next) {
@@ -67,6 +67,30 @@ function authenticationToken (req, res, next) {
         res.status(403).send('Access denied. Invalid token.');
     }
 }
+
+
+app.post('/tokengenerate', (req, res) => {
+    const refreshToken = req.body.refreshToken;
+    if(refreshToken==null) {
+        return res.status(401).send('Access denied. No refresh token provided.');
+    }
+
+    // if(!refreshTokens.includes(refreshToken)){
+    //     return res.status(403).send('Access denied. No refresh tokens provided.');
+    // }
+
+    jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err,user)=>{
+        if(err) return res.sendStatus(403);
+        const accessToken = generateAccessToken({password: user.password});
+        res.json({accessToken: accessToken});
+    })
+})
+
+function generateAccessToken(user) {
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {expiresIn:'60s'});
+}
+
+
 app.listen(PORT, ()=>{
     console.log(`Server is running on port http://localhost:${PORT}`)
 })

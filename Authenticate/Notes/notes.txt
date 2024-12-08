@@ -1,2 +1,2 @@
 npm i cookie-parser
-npm i bcryt
+npm install bcrypt

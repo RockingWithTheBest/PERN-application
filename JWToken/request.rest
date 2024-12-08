@@ -1,5 +1,6 @@
 GET http://localhost:1111/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNseWRlIiwiaWF0IjoxNzMyMDg5MDEyLCJleHAiOjE3MzIwODkwNTJ9.PXGr1q-FIpaULJRJCsMPLHPC7fhwtgJP0aJEbOO4-Lc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNseWRlIiwiaWF0IjoxNzMyNjQ4Njc4LCJleHAiOjE3MzI2NDg3MTh9.OsupHPZ7dnnQjC0FF4n-1CUZTp-9NmBACE2eCPpGjvo
+
 
 
 ###
@@ -8,10 +9,8 @@ Host: localhost:1112
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNseWRlIiwiaWF0IjoxNzMyMDg4OTYzfQ.4bzeSu7V-S5ipl1J61uMhaySCaFYLsZ5XZM3Cb-WxGw"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkNseWRlIiwiaWF0IjoxNzMyNjQ4NTg2fQ.yEBXjGT8nGFylqAoQ5rHV77AeW3yyUMbXZK95_fuXKw"
 }
-
-
 
 ###
 POST /login HTTP/1.1

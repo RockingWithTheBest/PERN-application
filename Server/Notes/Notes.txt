@@ -10,6 +10,8 @@ axios : npm install axios --save
 nodemon: npm i nodemon
 npm i axios
 npm install cors
+npm install jspdf
+npm install jspdf jspdf-autotable
 
 
  // "test": "echo \"Error: no test specified\" && exit 1",

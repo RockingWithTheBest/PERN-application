@@ -2,10 +2,8 @@ import React,{useState, useEffect} from "react";
 import axios from 'axios';
 import DataTable from "react-data-table-component";
 import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
+import { Link } from 'react-router-dom'
 import Popup from 'reactjs-popup';
-import jsPDF from 'jspdf';
-import 'jspdf-autotable';
 import './ClientRoute.css';
 
 const columns = (DeleteById,UpdateById , GetById) => [
@@ -30,7 +28,7 @@ const columns = (DeleteById,UpdateById , GetById) => [
         width: '200px',
         cell: row => (
             <>
-                <Button variant="outlined" startIcon={<DeleteIcon /> } onClick={()=>DeleteById(row.id)}>
+                <Button variant="outlined"  onClick={()=>DeleteById(row.id)}>
                     Delete
                 </Button>
             </>    
@@ -41,7 +39,7 @@ const columns = (DeleteById,UpdateById , GetById) => [
         width: '200px',
         cell: row => (
             <>
-                <Button variant="outlined" startIcon={<DeleteIcon /> } onClick={()=>UpdateById(row)}>
+                <Button variant="outlined"  onClick={()=>UpdateById(row)}>
                     Update
                 </Button>
             </>    
@@ -52,7 +50,7 @@ const columns = (DeleteById,UpdateById , GetById) => [
         width: '200px',
         cell: row => (
             <>
-                <Button variant="outlined" startIcon={<DeleteIcon /> } onClick={()=>GetById(row)}>
+                <Button variant="outlined" onClick={()=>GetById(row)}>
                     Get id
                 </Button>
             </>    
@@ -172,27 +170,11 @@ const Route = ()=>{
         }
     }
 };
-
-
-const generatePDF =() => {
-    const doc = new jsPDF();
-    doc.text("Client Report - 12/4/2024", 20,10);
-    const tableColumn = ["Id", "Full Name", "Passport Number"];
-    const tableRows =[];
-
-    client.forEach((client) => {
-        const clientData =[
-            client.id, client.full_name, client.passport_number
-        ]
-        tableRows.push(clientData);
-    });
-    doc.autoTable(tableColumn, tableRows, { startY: 20 });
-    doc.save("client_report.pdf");
-}
    
     return(
         <div className="client">
             <h1>Clients</h1>
+            <Link to='/login-cashier'><button>Got to Login</button></Link>
             <div className="filter">
                 <form action="" onSubmit={postData} className="form-submit">
                         <div>
@@ -217,7 +199,7 @@ const generatePDF =() => {
                 </div>
             </div>
 
-            <div><button onClick={generatePDF}>Generate Report</button></div>
+       
              <DataTable columns={columns(DeleteById, UpdateById, GetById)} 
              data = {client} 
              customStyles = {customStyles} 

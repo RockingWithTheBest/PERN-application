@@ -1,0 +1,7 @@
+.panelmenu {
+    background: linear-gradient(135deg, #00aaff, #0047ab);
+    display: flex;
+    justify-content: center;
+    gap: 86px;
+    padding-top: 84px;
+}

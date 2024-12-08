@@ -1,0 +1,35 @@
+GET  http://localhost:2223/identity
+Authorization: Bearer 
+
+
+
+
+###
+
+POST /login HTTP/1.1
+HOST:localhost:2222
+Content-Type: application/json
+
+{
+   "password":"2eer76411"
+}
+
+###
+POST /register HTTP/1.1
+Host: localhost:2222
+Content-Type: application/json
+
+{
+    "full_name":"Joe Doni",
+    "password":"2eer76411"
+}
+
+###
+
+POST /tokengenerate HTTP/1.1
+HOST:localhost:2223
+Content-Type: application/json
+
+{
+   "refreshToken":""
+}

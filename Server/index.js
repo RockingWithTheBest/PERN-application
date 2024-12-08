@@ -131,7 +131,7 @@ app.get("/sort", async (req, res)=>{
 });
 
 //Filter
-app.get('/get', async (req, res) => {
+app.get('/get', async (req, res) => { 
     const { fullname, passportNumber, sortBy,sortOrder } = req.query;
 
     let query = `SELECT * FROM "Clients" WHERE true`; // `true` allows for conditional appending

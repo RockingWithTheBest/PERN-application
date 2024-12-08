@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "devStart": "nodemon server.js",
-    "identify": "nodemon identify.js"
+    "identify": "nodemon identify.js",
+    "registerCashier":"nodemon registerCashier.js",
+    "identifyCashier":"nodemon identifyCashier.js"
   },
   "keywords": [],
   "author": "",
